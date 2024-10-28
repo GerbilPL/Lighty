@@ -46,8 +46,8 @@ dependencies {
     }
 
     // Mod Menu
-    //modImplementation "com.terraformersmc:modmenu:${modmenu_version}"
-    //modImplementation fabricApi.module("fabric-screen-api-v1", rootProject.findProperty("fabric_api_version"))
+    modImplementation "com.terraformersmc:modmenu:${modmenu_version}"
+    modImplementation fabricApi.module("fabric-screen-api-v1", rootProject.findProperty("fabric_api_version"))
 
     compileOnly project(":common")
 }
