@@ -24,12 +24,11 @@ import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class LightyFabric implements ClientModInitializer {
-
     @Override
     public void onInitializeClient() {
 
         ClientTickEvents.END_CLIENT_TICK.register(Compute::computeCache);
-        WorldRenderEvents.AFTER_ENTITIES.register(context -> Compute.render(context.frustum(), context.matrixStack(), context.projectionMatrix()));
+        WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> Compute.render(context.frustum(), context.matrixStack(), context.projectionMatrix()));
 
         ClientTickEvents.END_CLIENT_TICK.register(KeyBind::handleKeyBind);
 
